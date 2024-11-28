@@ -15,14 +15,18 @@
             xhr.onload = function() {
                 if (xhr.status == 200) {
                     var response = JSON.parse(xhr.responseText); 
-                    document.getElementById('result').innerHTML = '<h3>Posts:</h3>' + 
+                    
+                    // Adding your name to the fetched data
+                    var myName = "Your Name or ID";  // Replace with your name or ID
+                    
+                    // Displaying posts and your personal touch
+                    document.getElementById('result').innerHTML = '<h3>Posts fetched by ' + myName + ':</h3>' + 
                     '<pre>' + JSON.stringify(response, null, 2) + '</pre>';
                 } else {
                     console.log('Error: ' + xhr.status);
                 }
             };
 
-            
             xhr.send();
         }
     </script>
@@ -31,5 +35,9 @@
     <h1>AJAX Example</h1>
     <button onclick="fetchData()">Fetch Posts</button>
     <div id="result"></div>
+
+    <footer>
+        <p>Created by: MD JUBAYEED_ID_201_46</p>
+    </footer>
 </body>
 </html>
